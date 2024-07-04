@@ -42,3 +42,6 @@ vim.opt.writebackup = false
 vim.opt.autoread = true
 vim.opt.autowrite = true
 vim.opt.confirm = true
+
+-- always show the signcolumn
+vim.opt.signcolumn = "yes"
