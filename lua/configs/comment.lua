@@ -10,7 +10,7 @@ comment.setup({
     },
 
     opleader = {
-        line = "<leader>c",
-        block = "<leader>b",
+        line = "<leader>cc",
+        block = "<leader>bc",
     },
 })
