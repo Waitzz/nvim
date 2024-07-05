@@ -132,6 +132,12 @@ require("lazy").setup({
         end
     },
 
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true
+    },
+
     -- lsp plugins
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",

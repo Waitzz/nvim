@@ -1,8 +1,9 @@
 local luasnip_ok, luasnip = pcall(require, "luasnip")
 local cmp_ok, cmp = pcall(require, "cmp")
 local lspkind_ok, lspkind = pcall(require, "lspkind")
+local autopairs_ok, autopairs = pcall(require, "nvim-autopairs.completion.cmp")
 
-if not luasnip_ok or not cmp_ok or not lspkind_ok then
+if not luasnip_ok or not cmp_ok or not lspkind_ok or not autopairs_ok then
     return
 end
 
@@ -92,3 +93,5 @@ cmp.setup.cmdline(":", {
         { name = "cmdline" },
     }),
 })
+
+cmp.event:on("confirm_done", autopairs.on_confirm_done())
