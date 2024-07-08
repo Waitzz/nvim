@@ -4,7 +4,12 @@ if not is_ok then
 end
 
 lualine.setup({
-    options = {
-        theme = "gruvbox"
+    sections = {
+        lualine_c = {
+            {
+                "filename",
+                path = 1
+            }
+        }
     }
 })
