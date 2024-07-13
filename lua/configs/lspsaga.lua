@@ -4,7 +4,7 @@ if not is_ok then
 end
 
 local opts = {noremap = true, silent = true}
-vim.keymap.set("n", "<leader>c", "<cmd>Lspsaga incoming_calls<cr>", opts)
+vim.keymap.set("n", "<leader>h", "<cmd>Lspsaga incoming_calls<cr>", opts)
 vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<cr>", opts)
 
 lspsaga.setup({

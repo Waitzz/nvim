@@ -6,11 +6,11 @@ end
 comment.setup({
     toggler = {
         line = "<leader>cc",
-        block = "<leader>bc",
+        block = "<leader>cb",
     },
 
     opleader = {
         line = "<leader>cc",
-        block = "<leader>bc",
+        block = "<leader>cb",
     },
 })
