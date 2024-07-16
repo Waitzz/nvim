@@ -5,6 +5,7 @@ end
 
 bookmarks.setup({
     keymap = {
+        toggle = "<leader>m",
         close = "<esc>"
     }
 })
