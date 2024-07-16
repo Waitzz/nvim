@@ -53,6 +53,10 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.clangd.setup({
+    cmd = {
+        "clangd",
+        "--header-insertion=never"
+    },
     on_attach = on_attach,
     capabilities = capabilities
 })
