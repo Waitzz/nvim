@@ -165,5 +165,12 @@ require("lazy").setup({
         config = function ()
             require("configs/lspsaga")
         end
+    },
+
+    {
+        "Mr-LLLLL/interestingwords.nvim",
+        config = function ()
+            require("configs/interestingwords")
+        end
     }
 })
