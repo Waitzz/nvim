@@ -172,5 +172,12 @@ require("lazy").setup({
         config = function ()
             require("configs/interestingwords")
         end
+    },
+
+    {
+        "RRethy/vim-illuminate",
+        config = function ()
+            require("configs/illuminate")
+        end
     }
 })
