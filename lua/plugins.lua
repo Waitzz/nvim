@@ -118,7 +118,7 @@ require("lazy").setup({
 
     {
         "crusj/bookmarks.nvim",
-        branch = 'main',
+        branch = "main",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("configs/bookmarks")
