@@ -1,5 +1,5 @@
 -- define your colorscheme here
-local colorscheme = "gruvbox"
+local colorscheme = "tokyonight-night"
 
 local is_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not is_ok then
@@ -7,4 +7,4 @@ if not is_ok then
     return
 end
 
-vim.o.background = "dark"
+require("tokyonight").setup()
