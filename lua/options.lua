@@ -1,5 +1,5 @@
 -- leader key
-vim.g.mapleader = ','
+vim.g.mapleader = ","
 
 -- disable netrw
 vim.g.loaded_netrw = 1
