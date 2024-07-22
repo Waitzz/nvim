@@ -13,9 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        "ellisonleao/gruvbox.nvim",
+        "folke/tokyonight.nvim",
         priority = 1000,
-        config = true,
+        lazy = false
     },
 
     {
