@@ -4,7 +4,19 @@ if not is_ok then
 end
 
 treesitter.setup({
-    ensure_installed = {"asm", "bash", "c", "lua", "json", "make"},
+    ensure_installed = {
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "markdown",
+        "markdown_inline",
+        "asm",
+        "bash",
+        "json",
+        "make"
+    },
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
