@@ -57,6 +57,7 @@ lspconfig.clangd.setup({
         "clangd",
         "--header-insertion=never"
     },
+    root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
     on_attach = on_attach,
     capabilities = capabilities
 })
