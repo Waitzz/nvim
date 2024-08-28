@@ -15,7 +15,8 @@ treesitter.setup({
         "asm",
         "bash",
         "json",
-        "make"
+        "make",
+        "python"
     },
     highlight = {
         enable = true,
