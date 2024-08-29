@@ -4,6 +4,6 @@ if not is_ok then
 end
 
 whitespace.setup({
-    ignored_filetypes = { "lazy", "toggleterm", "dashboard", "mason", "lspinfo", "TelescopePrompt", "Trouble", "help", " " },
+    ignored_filetypes = { "lazy", "toggleterm", "dashboard", "mason", "lspinfo", "TelescopePrompt", "Trouble", "help", "" },
     vim.api.nvim_create_user_command("Whitespace", ":lua require('whitespace-nvim').trim()<cr>", {})
 })
