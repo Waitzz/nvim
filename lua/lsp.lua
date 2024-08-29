@@ -14,7 +14,8 @@ require("mason-lspconfig").setup({
         "clangd",
         "bashls",
         "pyright",
-        "jsonls"
+        "jsonls",
+        "asm_lsp"
     },
 })
 
@@ -73,6 +74,11 @@ lspconfig.pyright.setup({
 })
 
 lspconfig.jsonls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities
+})
+
+lspconfig.asm_lsp.setup({
     on_attach = on_attach,
     capabilities = capabilities
 })
