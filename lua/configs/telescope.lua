@@ -12,4 +12,3 @@ vim.keymap.set("n", "<leader>s", builtin.lsp_dynamic_workspace_symbols, {})
 
 telescope.setup()
 telescope.load_extension("bookmarks")
-telescope.load_extension("projects")

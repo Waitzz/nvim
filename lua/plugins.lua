@@ -25,7 +25,6 @@ require("lazy").setup({
             require("configs/dashboard")
         end,
         dependencies = {
-            "ahmedkhalf/project.nvim",
             "nvim-tree/nvim-web-devicons"
         }
     },
@@ -122,13 +121,6 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("configs/bookmarks")
-        end
-    },
-
-    {
-        "ahmedkhalf/project.nvim",
-        config = function ()
-            require("configs/project")
         end
     },
 
