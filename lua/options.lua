@@ -58,8 +58,8 @@ local function buf_win_enter()
 end
 
 function customer_foldtext()
-    local indent = vim.fn.indent(vim.v.foldstart)
-    return string.rep(" ", indent) .. "+-- " .. (vim.v.foldend - vim.v.foldstart + 1) .. " lines"
+    local line = vim.fn.getline(vim.v.foldstart)
+    return line  .. " 󰁂 " .. (vim.v.foldend - vim.v.foldstart + 1)
 end
 
 vim.opt.foldmethod = "expr"
