@@ -47,7 +47,7 @@ vim.opt.confirm = true
 vim.opt.signcolumn = "yes"
 
 -- fold settings
-local function buf_win_enter()
+local function file_type()
     local max = 0
     for i = 1, vim.api.nvim_buf_line_count(0) do
         if vim.fn.foldlevel(i) > max then
@@ -57,13 +57,13 @@ local function buf_win_enter()
     vim.wo.foldlevel = max
 end
 
-function customer_foldtext()
+function FoldText()
     local line = vim.fn.getline(vim.v.foldstart)
     return line  .. " 󰁂 " .. (vim.v.foldend - vim.v.foldstart + 1)
 end
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.api.nvim_create_autocmd("BufWinEnter", {callback = buf_win_enter})
-vim.opt.foldtext = "v:lua.customer_foldtext()"
+vim.api.nvim_create_autocmd("FileType", { callback = file_type })
+vim.opt.foldtext = "v:lua.FoldText()"
 vim.opt.fillchars = { fold = " " }
