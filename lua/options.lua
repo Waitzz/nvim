@@ -45,3 +45,25 @@ vim.opt.confirm = true
 
 -- always show the signcolumn
 vim.opt.signcolumn = "yes"
+
+-- fold settings
+local function buf_win_enter()
+    local max = 0
+    for i = 1, vim.api.nvim_buf_line_count(0) do
+        if vim.fn.foldlevel(i) > max then
+            max = vim.fn.foldlevel(i)
+        end
+    end
+    vim.wo.foldlevel = max
+end
+
+function customer_foldtext()
+    local indent = vim.fn.indent(vim.v.foldstart)
+    return string.rep(" ", indent) .. "+-- " .. (vim.v.foldend - vim.v.foldstart + 1) .. " lines"
+end
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.api.nvim_create_autocmd("BufWinEnter", {callback = buf_win_enter})
+vim.opt.foldtext = "v:lua.customer_foldtext()"
+vim.opt.fillchars = { fold = " " }
