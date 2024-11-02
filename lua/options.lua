@@ -47,14 +47,30 @@ vim.opt.confirm = true
 vim.opt.signcolumn = "yes"
 
 -- fold settings
-local function file_type()
+local function nvim_buf_max_fold(buffer)
     local max = 0
-    for i = 1, vim.api.nvim_buf_line_count(0) do
+    for i = 1, vim.api.nvim_buf_line_count(buffer) do
         if vim.fn.foldlevel(i) > max then
             max = vim.fn.foldlevel(i)
         end
     end
-    vim.wo.foldlevel = max
+    return max
+end
+
+local function zm_mapping()
+    local max = nvim_buf_max_fold(0)
+    if vim.wo.foldlevel > max then
+        vim.wo.foldlevel = max
+    end
+    vim.cmd("normal! zm")
+end
+
+local function zr_mapping()
+    local max = nvim_buf_max_fold(0)
+    if vim.wo.foldlevel > max then
+        vim.wo.foldlevel = max
+    end
+    vim.cmd("normal! zr")
 end
 
 function FoldText()
@@ -64,6 +80,9 @@ end
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.api.nvim_create_autocmd("FileType", { callback = file_type })
 vim.opt.foldtext = "v:lua.FoldText()"
 vim.opt.fillchars = { fold = " " }
+vim.opt.foldlevelstart = 99
+
+vim.keymap.set("n", "zm", zm_mapping, { noremap = true, silent = true})
+vim.keymap.set("n", "zr", zr_mapping, { noremap = true, silent = true})
