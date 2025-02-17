@@ -16,7 +16,8 @@ treesitter.setup({
         "bash",
         "json",
         "make",
-        "python"
+        "python",
+        "devicetree"
     },
     highlight = {
         enable = true,
