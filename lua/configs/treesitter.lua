@@ -17,7 +17,8 @@ treesitter.setup({
         "json",
         "make",
         "python",
-        "devicetree"
+        "devicetree",
+        "kconfig"
     },
     highlight = {
         enable = true,
