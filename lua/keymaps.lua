@@ -8,3 +8,10 @@ vim.keymap.set("n", "<leader>t", "<cmd>Outline<CR>", keymap_opts)
 vim.keymap.set("n", "<F12>", "<cmd>ToggleTerm<CR>", keymap_opts)
 vim.keymap.set("t", "<F12>", "<cmd>ToggleTerm<CR>", keymap_opts)
 
+-- delete default mapping from v0.10.1
+vim.keymap.del("n", "grr", {})
+vim.keymap.del("n", "gri", {})
+vim.keymap.del("x", "gra", {})
+vim.keymap.del("n", "gra", {})
+vim.keymap.del("n", "grn", {})
+
