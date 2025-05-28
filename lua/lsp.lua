@@ -21,18 +21,9 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require("lspconfig")
 
-local on_attach = function(client, bufnr)
-    local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>", bufopts)
-    vim.keymap.set("n", "gr", "<cmd>Lspsaga finder<cr>", bufopts)
-    vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", bufopts)
-    vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename ++project<cr>", bufopts)
-end
-
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lspconfig.lua_ls.setup({
-    on_attach = on_attach,
     settings = {
         Lua = {
             runtime = {
@@ -59,26 +50,21 @@ lspconfig.clangd.setup({
         "--header-insertion=never"
     },
     root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
-    on_attach = on_attach,
     capabilities = capabilities
 })
 
 lspconfig.bashls.setup({
-    on_attach = on_attach,
     capabilities = capabilities
 })
 
 lspconfig.pyright.setup({
-    on_attach = on_attach,
     capabilities = capabilities
 })
 
 lspconfig.jsonls.setup({
-    on_attach = on_attach,
     capabilities = capabilities
 })
 
 lspconfig.asm_lsp.setup({
-    on_attach = on_attach,
     capabilities = capabilities
 })

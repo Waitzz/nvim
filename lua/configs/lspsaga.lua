@@ -4,6 +4,11 @@ if not is_ok then
 end
 
 local opts = {noremap = true, silent = true}
+
+vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
+vim.keymap.set("n", "gr", "<cmd>Lspsaga finder<cr>", opts)
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
+vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename ++project<cr>", opts)
 vim.keymap.set("n", "<leader>h", "<cmd>Lspsaga incoming_calls<cr>", opts)
 vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<cr>", opts)
 
