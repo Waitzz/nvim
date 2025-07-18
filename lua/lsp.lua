@@ -19,11 +19,9 @@ require("mason-lspconfig").setup({
     },
 })
 
-local lspconfig = require("lspconfig")
-
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             runtime = {
@@ -43,28 +41,33 @@ lspconfig.lua_ls.setup({
 
     capabilities = capabilities
 })
+vim.lsp.enable("lua_ls")
 
-lspconfig.clangd.setup({
+vim.lsp.config("clangd", {
     cmd = {
         "clangd",
         "--header-insertion=never"
     },
-    root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
     capabilities = capabilities
 })
+vim.lsp.enable("clangd")
 
-lspconfig.bashls.setup({
+vim.lsp.config("bashls", {
     capabilities = capabilities
 })
+vim.lsp.enable("bashls")
 
-lspconfig.pyright.setup({
+vim.lsp.config("pyright", {
     capabilities = capabilities
 })
+vim.lsp.enable("pyright")
 
-lspconfig.jsonls.setup({
+vim.lsp.config("jsonls", {
     capabilities = capabilities
 })
+vim.lsp.enable("jsonls")
 
-lspconfig.asm_lsp.setup({
+vim.lsp.config("asm_lsp", {
     capabilities = capabilities
 })
+vim.lsp.enable("asm_lsp")
