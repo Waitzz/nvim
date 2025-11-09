@@ -11,6 +11,8 @@ vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
 vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename ++project<cr>", opts)
 vim.keymap.set("n", "<leader>h", "<cmd>Lspsaga incoming_calls<cr>", opts)
 vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<cr>", opts)
+vim.keymap.set("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
+vim.keymap.set("n", "[E", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
 
 lspsaga.setup({
     finder = {
