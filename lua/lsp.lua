@@ -15,7 +15,8 @@ require("mason-lspconfig").setup({
         "bashls",
         "pyright",
         "jsonls",
-        "asm_lsp"
+        "asm_lsp",
+        "yamlls"
     },
 })
 
