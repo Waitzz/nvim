@@ -19,7 +19,8 @@ treesitter.setup({
         "python",
         "devicetree",
         "kconfig",
-        "t32"
+        "t32",
+        "yaml"
     },
     highlight = {
         enable = true,
