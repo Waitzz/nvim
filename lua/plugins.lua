@@ -189,5 +189,21 @@ require("lazy").setup({
     {
         "j-hui/fidget.nvim",
         opts = {}
-    }
+    },
+
+    {
+        "yetone/avante.nvim",
+        build = vim.fn.has("win32") ~= 0
+            and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+            or "make",
+        event = "VeryLazy",
+        version = false,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+        },
+
+        keys = require("configs/avante").keys,
+        opts = require("configs/avante").opts
+    },
 })

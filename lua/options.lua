@@ -10,6 +10,7 @@ vim.opt.termguicolors = true
 
 -- common settings
 vim.opt.number = true
+vim.opt.laststatus = 3
 vim.opt.cursorline = true
 vim.opt.virtualedit = "block,onemore"
 vim.opt.wrap = false
