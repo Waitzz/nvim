@@ -206,4 +206,16 @@ require("lazy").setup({
         keys = require("configs/avante").keys,
         opts = require("configs/avante").opts
     },
+
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify"
+        },
+        config = function ()
+            require("configs/noice")
+        end
+    }
 })
