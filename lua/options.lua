@@ -10,7 +10,6 @@ vim.opt.termguicolors = true
 
 -- common settings
 vim.opt.number = true
-vim.opt.laststatus = 3
 vim.opt.cursorline = true
 vim.opt.virtualedit = "block,onemore"
 vim.opt.wrap = false
@@ -46,6 +45,14 @@ vim.opt.confirm = true
 
 -- always show the signcolumn
 vim.opt.signcolumn = "yes"
+
+-- status settings
+vim.opt.laststatus = 3
+
+-- command line settings
+vim.opt.showcmd = false
+vim.opt.showmode = false
+vim.opt.cmdheight = 0
 
 -- fold settings
 local function nvim_buf_max_fold(buffer)
