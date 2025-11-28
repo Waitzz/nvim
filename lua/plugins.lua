@@ -208,6 +208,17 @@ require("lazy").setup({
     },
 
     {
+        "ravitemer/mcphub.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        build = "npm install -g mcp-hub@latest",
+        config = function()
+            require("configs/mcphub")
+        end
+    },
+
+    {
         "folke/noice.nvim",
         event = "VeryLazy",
         dependencies = {
