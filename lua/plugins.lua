@@ -204,6 +204,8 @@ require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
+            "folke/snacks.nvim",
+            "nvim-telescope/telescope.nvim"
         },
 
         keys = require("configs/avante").keys,

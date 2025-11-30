@@ -24,7 +24,6 @@ m.keys = {
 
 m.opts = {
     provider = "claude",
-    mode = "legacy",
 
     providers = {
         claude = {
@@ -38,7 +37,12 @@ m.opts = {
         }
     },
 
+    input = {
+        provider = 'snacks'
+    },
+
     selector = {
+        provider = "telescope",
         exclude_auto_select = { "NvimTree" },
     },
 
