@@ -61,7 +61,6 @@ require("lazy").setup({
 
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
         config = function ()
             require("configs/telescope")
         end,
@@ -77,7 +76,7 @@ require("lazy").setup({
 
     {
         "akinsho/toggleterm.nvim",
-        version = "*",
+        version = false,
         config = function ()
             require("configs/toggleterm")
         end
