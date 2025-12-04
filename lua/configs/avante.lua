@@ -23,7 +23,7 @@ m.keys = {
 }
 
 m.opts = {
-    provider = "claude",
+    provider = "siliconflow",
 
     providers = {
         claude = {
@@ -34,6 +34,13 @@ m.opts = {
                 temperature = 0.75,
                 max_tokens = 20480,
             }
+        },
+
+        siliconflow = {
+            __inherited_from = "openai",
+            api_key_name = "SILICONFLOW_API_KEY",
+            endpoint = "https://api.siliconflow.cn/v1",
+            model = "moonshotai/Kimi-K2-Thinking",
         }
     },
 
