@@ -35,5 +35,15 @@ lspsaga.setup({
             edit = "<enter>",
             quit = "<esc>"
         }
+    },
+
+    diagnostic = {
+        diagnostic_only_current = true
+    },
+
+    rename = {
+        keys = {
+            quit = "<esc>"
+        }
     }
 })
