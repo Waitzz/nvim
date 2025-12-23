@@ -1,29 +1,43 @@
-local is_ok, treesitter = pcall(require, "nvim-treesitter.configs")
+local is_ok, treesitter = pcall(require, "nvim-treesitter")
 if not is_ok then
     return
 end
 
-treesitter.setup({
-    ensure_installed = {
+treesitter.install({
+    "c",
+    "lua",
+    "vim",
+    "vimdoc",
+    "query",
+    "markdown",
+    "markdown_inline",
+    "asm",
+    "bash",
+    "json",
+    "make",
+    "python",
+    "devicetree",
+    "kconfig",
+    "t32",
+    "yaml",
+    "regex"
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {
         "c",
-        "lua",
-        "vim",
-        "vimdoc",
-        "query",
-        "markdown",
-        "markdown_inline",
         "asm",
-        "bash",
+        "sh",
         "json",
         "make",
         "python",
-        "devicetree",
+        "dts",
         "kconfig",
-        "t32",
+        "trace32",
         "yaml"
     },
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    }
+    callback = function()
+        vim.treesitter.start()
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
 })
