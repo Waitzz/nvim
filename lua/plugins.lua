@@ -97,9 +97,10 @@ require("lazy").setup({
     },
 
     {
-        "brenton-leighton/multiple-cursors.nvim",
-        opts = require("configs/multiple-cursors").opts,
-        keys = require("configs/multiple-cursors").keys
+        "jake-stewart/multicursor.nvim",
+        config = function ()
+            require("configs/multicursor")
+        end
     },
 
     {
