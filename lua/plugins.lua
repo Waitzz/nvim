@@ -183,11 +183,6 @@ require("lazy").setup({
     },
 
     {
-        "j-hui/fidget.nvim",
-        opts = {}
-    },
-
-    {
         "yetone/avante.nvim",
         build = vim.fn.has("win32") ~= 0
             and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
