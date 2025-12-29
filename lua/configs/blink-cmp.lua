@@ -3,22 +3,34 @@ if not is_ok then
     return
 end
 
+local has_words_before = function()
+    local col = vim.api.nvim_win_get_cursor(0)[2]
+    if col == 0 then
+        return false
+    end
+    local line = vim.api.nvim_get_current_line()
+    return line:sub(col, col):match("%s") == nil
+end
+
 blink_cmp.setup({
     keymap = {
         preset = "super-tab",
 
         ["<Tab>"] = {
-            "select_next",
+            function(cmp)
+                if has_words_before() then
+                    return cmp.insert_next()
+                end
+            end,
             "fallback"
         },
 
         ["<S-Tab>"] = {
-            "select_prev",
-            "fallback"
+            "insert_prev"
         },
 
         ["<CR>"] = {
-            "accept",
+            "select_and_accept",
             "fallback"
         }
     },
