@@ -48,6 +48,12 @@ blink_cmp.setup({
         accept = { auto_brackets = { enabled = true } },
         list = { selection = { preselect = false } }
     },
-    fuzzy = { implementation = "prefer_rust_with_warning" }
+    fuzzy = { implementation = "prefer_rust_with_warning" },
+    cmdline = {
+        completion = {
+            menu = { auto_show = true },
+            list = { selection = { preselect = false } }
+        },
+    },
 })
 
