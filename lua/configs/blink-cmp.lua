@@ -1,7 +1,14 @@
-local is_ok, blink_cmp = pcall(require, "blink.cmp")
-if not is_ok then
+local blink_ok, blink_cmp = pcall(require, "blink.cmp")
+if not blink_ok then
     return
 end
+
+local luasnip_ok, luasnip = pcall(require, "luasnip")
+if not luasnip_ok then
+    return
+end
+
+require("luasnip.loaders.from_vscode").lazy_load()
 
 local has_words_before = function()
     local col = vim.api.nvim_win_get_cursor(0)[2]
@@ -18,6 +25,12 @@ blink_cmp.setup({
 
         ["<Tab>"] = {
             function(cmp)
+                if cmp.is_visible() then
+                    return cmp.select_next()
+                end
+            end,
+            "snippet_forward",
+            function(cmp)
                 if has_words_before() then
                     return cmp.insert_next()
                 end
@@ -26,13 +39,22 @@ blink_cmp.setup({
         },
 
         ["<S-Tab>"] = {
-            "insert_prev"
+            function(cmp)
+                if cmp.is_visible() then
+                    return cmp.select_prev()
+                end
+            end,
+            "snippet_backward",
+            "fallback"
         },
 
         ["<CR>"] = {
             "select_and_accept",
             "fallback"
         }
+    },
+    snippets = {
+        preset = "luasnip"
     },
     sources = {
         default = { "avante", "lsp", "path", "snippets", "buffer" },
