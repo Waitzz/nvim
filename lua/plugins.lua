@@ -143,6 +143,7 @@ require("lazy").setup({
     {
         "saghen/blink.cmp",
         dependencies = {
+            "L3MON4D3/LuaSnip",
             "rafamadriz/friendly-snippets",
             "Kaiser-Yang/blink-cmp-avante"
         },
