@@ -231,5 +231,10 @@ require("lazy").setup({
         config = function ()
             require("configs/noice")
         end
+    },
+
+    {
+        "nmac427/guess-indent.nvim",
+        opts = {}
     }
 })
