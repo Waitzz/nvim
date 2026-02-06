@@ -5,17 +5,34 @@ end
 
 multicursor.setup()
 
-vim.keymap.set({ "n", "i", "x" }, "<C-Up>", function () multicursor.lineAddCursor(-1) end)
-vim.keymap.set({ "n", "i", "x" }, "<C-Down>", function () multicursor.lineAddCursor(1) end)
+local cursor_stack = {}
+
+local function lineCursor(dir)
+    if #cursor_stack > 0 and cursor_stack[#cursor_stack] == -dir then
+        multicursor.lineSkipCursor()
+        table.remove(cursor_stack)
+    else
+        multicursor.lineAddCursor(dir)
+        table.insert(cursor_stack, dir)
+    end
+end
+
+vim.keymap.set({ "n", "i", "x" }, "<C-Up>", function()
+    multicursor.lineCursor(-1)
+end)
+vim.keymap.set({ "n", "i", "x" }, "<C-Down>", function()
+    multicursor.lineCursor(1)
+end)
 
 vim.keymap.set({ "n", "x" }, "<C-q>", multicursor.toggleCursor)
 
-multicursor.addKeymapLayer(function (keymap)
-    keymap({ "n" }, "<ESC>", function ()
+multicursor.addKeymapLayer(function(keymap)
+    keymap({ "n" }, "<ESC>", function()
         if not multicursor.cursorsEnabled() then
             multicursor.enableCursors()
         else
             multicursor.clearCursors()
+            cursor_stack = {}
         end
     end)
 end)
