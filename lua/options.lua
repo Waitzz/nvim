@@ -89,7 +89,7 @@ end
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldtext = "v:lua.FoldText()"
-vim.opt.fillchars = { fold = " " }
+vim.opt.fillchars = { fold = " ", diff = " " }
 vim.opt.foldlevelstart = 99
 
 vim.keymap.set("n", "zm", zm_mapping, { noremap = true, silent = true })

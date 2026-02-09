@@ -237,4 +237,6 @@ require("lazy").setup({
         "nmac427/guess-indent.nvim",
         opts = {},
     },
+
+    "sindrets/diffview.nvim",
 })
