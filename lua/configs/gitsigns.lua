@@ -9,11 +9,11 @@ local function map(mode, l, r, opts)
     vim.keymap.set(mode, l, r, opts)
 end
 
-local function  on_attach_keymap()
+local function on_attach_keymap()
     -- Navigation
     map("n", "]c", function()
         if vim.wo.diff then
-            vim.cmd.normal({"]c", bang = true})
+            vim.cmd.normal({ "]c", bang = true })
         else
             gitsigns.nav_hunk("next")
         end
@@ -21,7 +21,7 @@ local function  on_attach_keymap()
 
     map("n", "[c", function()
         if vim.wo.diff then
-            vim.cmd.normal({"[c", bang = true})
+            vim.cmd.normal({ "[c", bang = true })
         else
             gitsigns.nav_hunk("prev")
         end

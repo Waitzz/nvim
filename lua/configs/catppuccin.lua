@@ -6,6 +6,6 @@ end
 catppuccin.setup({
     integrations = {
         notify = true,
-        noice = true
-    }
+        noice = true,
+    },
 })

@@ -6,5 +6,5 @@ end
 vim.keymap.set("n", "<leader>p", "<cmd>BufferLinePick<cr>", {})
 
 bufferline.setup({
-    options = {}
+    options = {},
 })

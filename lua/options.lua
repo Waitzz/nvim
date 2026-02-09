@@ -83,7 +83,7 @@ end
 
 function FoldText()
     local line = vim.fn.getline(vim.v.foldstart)
-    return line  .. " 󰁂 " .. (vim.v.foldend - vim.v.foldstart + 1)
+    return line .. " 󰁂 " .. (vim.v.foldend - vim.v.foldstart + 1)
 end
 
 vim.opt.foldmethod = "expr"
@@ -92,5 +92,5 @@ vim.opt.foldtext = "v:lua.FoldText()"
 vim.opt.fillchars = { fold = " " }
 vim.opt.foldlevelstart = 99
 
-vim.keymap.set("n", "zm", zm_mapping, { noremap = true, silent = true})
-vim.keymap.set("n", "zr", zr_mapping, { noremap = true, silent = true})
+vim.keymap.set("n", "zm", zm_mapping, { noremap = true, silent = true })
+vim.keymap.set("n", "zr", zr_mapping, { noremap = true, silent = true })

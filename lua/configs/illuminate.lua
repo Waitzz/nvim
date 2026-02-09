@@ -6,6 +6,6 @@ end
 illuminate.configure({
     providers = {
         "lsp",
-        "treesitter"
-    }
+        "treesitter",
+    },
 })

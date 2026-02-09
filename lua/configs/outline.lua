@@ -8,10 +8,10 @@ outline.setup({
         position = "left",
         width = 30,
         relative_width = false,
-        auto_close = true
+        auto_close = true,
     },
 
     outline_items = {
-        show_symbol_details = false
-    }
+        show_symbol_details = false,
+    },
 })

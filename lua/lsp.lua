@@ -3,9 +3,9 @@ require("mason").setup({
         icons = {
             package_installed = "✓",
             package_pending = "➜",
-            package_uninstalled = "✗"
-        }
-    }
+            package_uninstalled = "✗",
+        },
+    },
 })
 
 require("mason-lspconfig").setup({
@@ -16,7 +16,7 @@ require("mason-lspconfig").setup({
         "pyright",
         "jsonls",
         "asm_lsp",
-        "yamlls"
+        "yamlls",
     },
 })
 
@@ -40,35 +40,35 @@ vim.lsp.config("lua_ls", {
         },
     },
 
-    capabilities = capabilities
+    capabilities = capabilities,
 })
 vim.lsp.enable("lua_ls")
 
 vim.lsp.config("clangd", {
     cmd = {
         "clangd",
-        "--header-insertion=never"
+        "--header-insertion=never",
     },
-    capabilities = capabilities
+    capabilities = capabilities,
 })
 vim.lsp.enable("clangd")
 
 vim.lsp.config("bashls", {
-    capabilities = capabilities
+    capabilities = capabilities,
 })
 vim.lsp.enable("bashls")
 
 vim.lsp.config("pyright", {
-    capabilities = capabilities
+    capabilities = capabilities,
 })
 vim.lsp.enable("pyright")
 
 vim.lsp.config("jsonls", {
-    capabilities = capabilities
+    capabilities = capabilities,
 })
 vim.lsp.enable("jsonls")
 
 vim.lsp.config("asm_lsp", {
-    capabilities = capabilities
+    capabilities = capabilities,
 })
 vim.lsp.enable("asm_lsp")

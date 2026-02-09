@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -16,9 +16,9 @@ require("lazy").setup({
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
-        config = function ()
+        config = function()
             require("configs/catppuccin")
-        end
+        end,
     },
 
     {
@@ -28,94 +28,94 @@ require("lazy").setup({
             require("configs/dashboard")
         end,
         dependencies = {
-            "nvim-tree/nvim-web-devicons"
-        }
+            "nvim-tree/nvim-web-devicons",
+        },
     },
 
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
         lazy = false,
-        config = function ()
+        config = function()
             require("configs/nvim-tree")
         end,
-        dependencies = { "nvim-tree/nvim-web-devicons" }
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
     {
         "akinsho/bufferline.nvim",
         version = "*",
-        config = function ()
+        config = function()
             require("configs/bufferline")
         end,
-        dependencies = { "nvim-tree/nvim-web-devicons" }
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
     {
         "nvim-lualine/lualine.nvim",
-        config = function ()
+        config = function()
             require("configs/lualine")
         end,
-        dependencies = { "nvim-tree/nvim-web-devicons" }
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
     {
         "nvim-telescope/telescope.nvim",
-        config = function ()
+        config = function()
             require("configs/telescope")
         end,
-        dependencies = { "nvim-lua/plenary.nvim" }
+        dependencies = { "nvim-lua/plenary.nvim" },
     },
 
     {
         "hedyhli/outline.nvim",
-        config = function ()
+        config = function()
             require("configs/outline")
-        end
+        end,
     },
 
     {
         "akinsho/toggleterm.nvim",
         version = false,
-        config = function ()
+        config = function()
             require("configs/toggleterm")
-        end
+        end,
     },
 
     {
         "numToStr/Comment.nvim",
-        config = function ()
+        config = function()
             require("configs/comment")
-        end
+        end,
     },
 
     {
         "johnfrankmorgan/whitespace.nvim",
-        config = function ()
+        config = function()
             require("configs/whitespace")
-        end
+        end,
     },
 
     {
         "jake-stewart/multicursor.nvim",
-        config = function ()
+        config = function()
             require("configs/multicursor")
-        end
+        end,
     },
 
     {
         "lewis6991/gitsigns.nvim",
-        config = function ()
+        config = function()
             require("configs/gitsigns")
-        end
+        end,
     },
 
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function ()
+        config = function()
             require("configs/treesitter")
-        end
+        end,
     },
 
     {
@@ -124,7 +124,7 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("configs/bookmarks")
-        end
+        end,
     },
 
     {
@@ -132,7 +132,7 @@ require("lazy").setup({
         event = "InsertEnter",
         config = function()
             require("configs/autopairs")
-        end
+        end,
     },
 
     -- lsp plugins
@@ -145,33 +145,33 @@ require("lazy").setup({
         dependencies = {
             "L3MON4D3/LuaSnip",
             "rafamadriz/friendly-snippets",
-            "Kaiser-Yang/blink-cmp-avante"
+            "Kaiser-Yang/blink-cmp-avante",
         },
         version = "*",
-        config = function ()
+        config = function()
             require("configs/blink-cmp")
-        end
+        end,
     },
 
     {
         "nvimdev/lspsaga.nvim",
-        config = function ()
+        config = function()
             require("configs/lspsaga")
-        end
+        end,
     },
 
     {
         "Mr-LLLLL/interestingwords.nvim",
-        config = function ()
+        config = function()
             require("configs/interestingwords")
-        end
+        end,
     },
 
     {
         "RRethy/vim-illuminate",
-        config = function ()
+        config = function()
             require("configs/illuminate")
-        end
+        end,
     },
 
     {
@@ -187,7 +187,7 @@ require("lazy").setup({
     {
         "yetone/avante.nvim",
         build = vim.fn.has("win32") ~= 0
-            and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+                and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
             or "make",
         event = "VeryLazy",
         version = false,
@@ -195,19 +195,19 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
             "folke/snacks.nvim",
-            "nvim-telescope/telescope.nvim"
+            "nvim-telescope/telescope.nvim",
         },
 
         keys = require("configs/avante").keys,
-        opts = require("configs/avante").opts
+        opts = require("configs/avante").opts,
     },
 
     {
         "MeanderingProgrammer/render-markdown.nvim",
         opts = {
-            file_types = { "markdown", "Avante" }
+            file_types = { "markdown", "Avante" },
         },
-        ft = { "markdown", "Avante" }
+        ft = { "markdown", "Avante" },
     },
 
     {
@@ -218,7 +218,7 @@ require("lazy").setup({
         build = "npm install -g mcp-hub@latest",
         config = function()
             require("configs/mcphub")
-        end
+        end,
     },
 
     {
@@ -226,15 +226,15 @@ require("lazy").setup({
         event = "VeryLazy",
         dependencies = {
             "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify"
+            "rcarriga/nvim-notify",
         },
-        config = function ()
+        config = function()
             require("configs/noice")
-        end
+        end,
     },
 
     {
         "nmac427/guess-indent.nvim",
-        opts = {}
-    }
+        opts = {},
+    },
 })

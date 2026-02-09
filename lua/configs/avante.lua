@@ -19,7 +19,7 @@ m.keys = {
         end,
         desc = "Deselect file in NvimTree",
         ft = "NvimTree",
-    }
+    },
 }
 
 m.opts = {
@@ -33,7 +33,7 @@ m.opts = {
             extra_request_body = {
                 temperature = 0.75,
                 max_tokens = 20480,
-            }
+            },
         },
 
         siliconflow = {
@@ -41,11 +41,11 @@ m.opts = {
             api_key_name = "SILICONFLOW_API_KEY",
             endpoint = "https://api.siliconflow.cn/v1",
             model = "moonshotai/Kimi-K2-Thinking",
-        }
+        },
     },
 
     input = {
-        provider = 'snacks'
+        provider = "snacks",
     },
 
     selector = {
@@ -67,7 +67,7 @@ m.opts = {
     end,
 
     disabled_tools = {
-        "list_files",    -- Built-in file operations
+        "list_files", -- Built-in file operations
         "search_files",
         "read_file",
         "create_file",
@@ -76,7 +76,7 @@ m.opts = {
         "create_dir",
         "rename_dir",
         "delete_dir",
-        "bash",         -- Built-in terminal access
+        "bash", -- Built-in terminal access
     },
 }
 
