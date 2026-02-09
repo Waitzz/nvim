@@ -4,5 +4,5 @@ if not is_ok then
 end
 
 toggleterm.setup({
-    direction = "float"
+    direction = "float",
 })

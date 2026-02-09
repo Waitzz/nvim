@@ -8,10 +8,10 @@ dashboard.setup({
     shortcut_type = "number",
     config = {
         week_header = {
-            enable = true
+            enable = true,
         },
         mru = {
-            cwd_only = true
-        }
-    }
+            cwd_only = true,
+        },
+    },
 })

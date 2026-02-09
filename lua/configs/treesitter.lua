@@ -20,7 +20,7 @@ treesitter.install({
     "kconfig",
     "t32",
     "yaml",
-    "regex"
+    "regex",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -34,10 +34,10 @@ vim.api.nvim_create_autocmd("FileType", {
         "dts",
         "kconfig",
         "trace32",
-        "yaml"
+        "yaml",
     },
     callback = function()
         vim.treesitter.start()
         vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-    end
+    end,
 })

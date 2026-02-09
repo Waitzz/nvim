@@ -13,12 +13,12 @@ noice.setup({
         },
 
         signature = {
-            enabled = false
+            enabled = false,
         },
 
         hover = {
-            enabled = false
-        }
+            enabled = false,
+        },
     },
     -- you can enable a preset for easier configuration
     presets = {
@@ -30,7 +30,6 @@ noice.setup({
     },
 
     messages = {
-        view_search = false
-    }
+        view_search = false,
+    },
 })
-

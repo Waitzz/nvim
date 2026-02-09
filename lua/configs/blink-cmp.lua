@@ -35,7 +35,7 @@ blink_cmp.setup({
                     return cmp.insert_next()
                 end
             end,
-            "fallback"
+            "fallback",
         },
 
         ["<S-Tab>"] = {
@@ -45,16 +45,16 @@ blink_cmp.setup({
                 end
             end,
             "snippet_backward",
-            "fallback"
+            "fallback",
         },
 
         ["<CR>"] = {
             "select_and_accept",
-            "fallback"
-        }
+            "fallback",
+        },
     },
     snippets = {
-        preset = "luasnip"
+        preset = "luasnip",
     },
     sources = {
         default = { "avante", "lsp", "path", "snippets", "buffer" },
@@ -62,20 +62,19 @@ blink_cmp.setup({
             avante = {
                 module = "blink-cmp-avante",
                 name = "Avante",
-            }
-        }
+            },
+        },
     },
     completion = {
         documentation = { auto_show = true },
         accept = { auto_brackets = { enabled = true } },
-        list = { selection = { preselect = false } }
+        list = { selection = { preselect = false } },
     },
     fuzzy = { implementation = "prefer_rust_with_warning" },
     cmdline = {
         completion = {
             menu = { auto_show = true },
-            list = { selection = { preselect = false } }
+            list = { selection = { preselect = false } },
         },
     },
 })
-

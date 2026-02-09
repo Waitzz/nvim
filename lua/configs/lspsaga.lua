@@ -3,7 +3,7 @@ if not is_ok then
     return
 end
 
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
 vim.keymap.set("n", "gr", "<cmd>Lspsaga finder<cr>", opts)
@@ -18,32 +18,32 @@ lspsaga.setup({
     finder = {
         keys = {
             toggle_or_open = "<enter>",
-            quit = "<esc>"
-        }
+            quit = "<esc>",
+        },
     },
 
     outline = {
         layout = "float",
         keys = {
             toggle_or_jump = "<enter>",
-            quit = "<esc>"
-        }
+            quit = "<esc>",
+        },
     },
 
     callhierarchy = {
         keys = {
             edit = "<enter>",
-            quit = "<esc>"
-        }
+            quit = "<esc>",
+        },
     },
 
     diagnostic = {
-        diagnostic_only_current = true
+        diagnostic_only_current = true,
     },
 
     rename = {
         keys = {
-            quit = "<esc>"
-        }
-    }
+            quit = "<esc>",
+        },
+    },
 })

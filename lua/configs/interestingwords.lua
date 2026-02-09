@@ -10,7 +10,7 @@ interestingwords.setup({
         "#A0C980",
         "#5DBBC1",
         "#6CB6EB",
-        "#D38AEA"
+        "#D38AEA",
     },
-    search_key = false
+    search_key = false,
 })
