@@ -9,7 +9,7 @@ local cursor_stack = {}
 
 local function lineCursor(dir)
     if #cursor_stack > 0 and cursor_stack[#cursor_stack] == -dir then
-        multicursor.lineSkipCursor()
+        multicursor.lineSkipCursor(dir)
         table.remove(cursor_stack)
     else
         multicursor.lineAddCursor(dir)
@@ -18,10 +18,10 @@ local function lineCursor(dir)
 end
 
 vim.keymap.set({ "n", "i", "x" }, "<C-Up>", function()
-    multicursor.lineCursor(-1)
+    lineCursor(-1)
 end)
 vim.keymap.set({ "n", "i", "x" }, "<C-Down>", function()
-    multicursor.lineCursor(1)
+    lineCursor(1)
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-q>", multicursor.toggleCursor)
