@@ -3,6 +3,19 @@ if not is_ok then
     return
 end
 
+conform.setup({
+    formatters_by_ft = {
+        lua = { "stylua" },
+        c = { "clang_format" },
+        cpp = { "clang_format" },
+        sh = { "shfmt" },
+        python = { "ruff_format" },
+        json = { "prettier" },
+        yaml = { "prettier" },
+        markdown = { "prettier" },
+    },
+})
+
 vim.api.nvim_create_user_command("Format", function(args)
     local range = nil
     if args.count ~= -1 then

@@ -20,6 +20,16 @@ require("mason-lspconfig").setup({
     },
 })
 
+require("mason-tool-installer").setup({
+    ensure_installed = {
+        "stylua",
+        "clang-format",
+        "shfmt",
+        "ruff",
+        "prettier",
+    },
+})
+
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 vim.lsp.config("lua_ls", {
