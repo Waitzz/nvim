@@ -239,4 +239,11 @@ require("lazy").setup({
     },
 
     "sindrets/diffview.nvim",
+
+    {
+        "stevearc/conform.nvim",
+        config = function()
+            require("configs/conform")
+        end,
+    },
 })
