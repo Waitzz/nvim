@@ -135,11 +135,17 @@ require("lazy").setup({
         end,
     },
 
-    -- lsp plugins
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    "neovim/nvim-lspconfig",
+    {
+        "williamboman/mason.nvim",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+            "neovim/nvim-lspconfig",
+        },
+        config = function()
+            require("configs/mason")
+        end,
+    },
 
     {
         "saghen/blink.cmp",

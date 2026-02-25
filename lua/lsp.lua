@@ -1,36 +1,9 @@
-require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗",
-        },
-    },
-})
+local is_ok, blink_cmp = pcall(require, "blink.cmp")
+if not is_ok then
+    return
+end
 
-require("mason-lspconfig").setup({
-    ensure_installed = {
-        "lua_ls",
-        "clangd",
-        "bashls",
-        "pyright",
-        "jsonls",
-        "asm_lsp",
-        "yamlls",
-    },
-})
-
-require("mason-tool-installer").setup({
-    ensure_installed = {
-        "stylua",
-        "clang-format",
-        "shfmt",
-        "ruff",
-        "prettier",
-    },
-})
-
-local capabilities = require("blink.cmp").get_lsp_capabilities()
+local capabilities = blink_cmp.get_lsp_capabilities()
 
 vim.lsp.config("lua_ls", {
     settings = {
