@@ -49,7 +49,7 @@ m.opts = {
     },
 
     selector = {
-        provider = "telescope",
+        provider = "snacks",
         exclude_auto_select = { "NvimTree" },
     },
 
