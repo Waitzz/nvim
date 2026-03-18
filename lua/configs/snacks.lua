@@ -2,6 +2,19 @@ if Snacks == nil then
     return
 end
 
+Snacks.setup({
+    dashboard = {
+        enabled = true,
+        sections = {
+            { section = "header" },
+            { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+            { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+            { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+            { section = "startup" },
+        },
+    },
+})
+
 -- picker
 vim.keymap.set("n", "<leader>f", function()
     Snacks.picker.files()
@@ -27,3 +40,8 @@ end, { desc = "LSP Workspace Symbols" })
 vim.keymap.set({ "n", "t" }, "<F12>", function()
     Snacks.terminal.toggle(nil, { win = { style = "float", border = "rounded" } })
 end, { desc = "Toggle Terminal" })
+
+-- dashboard
+vim.api.nvim_create_user_command("Dashboard", function()
+    Snacks.dashboard()
+end, {})

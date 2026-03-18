@@ -22,17 +22,6 @@ require("lazy").setup({
     },
 
     {
-        "nvimdev/dashboard-nvim",
-        event = "VimEnter",
-        config = function()
-            require("configs/dashboard")
-        end,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-    },
-
-    {
         "nvim-tree/nvim-tree.lua",
         version = "*",
         lazy = false,
