@@ -76,14 +76,6 @@ require("lazy").setup({
     },
 
     {
-        "akinsho/toggleterm.nvim",
-        version = false,
-        config = function()
-            require("configs/toggleterm")
-        end,
-    },
-
-    {
         "numToStr/Comment.nvim",
         config = function()
             require("configs/comment")
