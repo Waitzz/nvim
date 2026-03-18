@@ -120,15 +120,6 @@ require("lazy").setup({
     },
 
     {
-        "crusj/bookmarks.nvim",
-        branch = "main",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("configs/bookmarks")
-        end,
-    },
-
-    {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
         config = function()
