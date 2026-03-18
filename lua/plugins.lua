@@ -138,13 +138,6 @@ require("lazy").setup({
     },
 
     {
-        "RRethy/vim-illuminate",
-        config = function()
-            require("configs/illuminate")
-        end,
-    },
-
-    {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = "cd app && npm install",
