@@ -1,27 +1,5 @@
 local m = {}
 
-m.keys = {
-    {
-        "<leader>a+",
-        function()
-            local tree_ext = require("avante.extensions.nvim_tree")
-            tree_ext.add_file()
-        end,
-        desc = "Select file in NvimTree",
-        ft = "NvimTree",
-    },
-
-    {
-        "<leader>a-",
-        function()
-            local tree_ext = require("avante.extensions.nvim_tree")
-            tree_ext.remove_file()
-        end,
-        desc = "Deselect file in NvimTree",
-        ft = "NvimTree",
-    },
-}
-
 m.opts = {
     provider = "siliconflow",
 
@@ -50,7 +28,6 @@ m.opts = {
 
     selector = {
         provider = "snacks",
-        exclude_auto_select = { "NvimTree" },
     },
 
     -- system_prompt as function ensures LLM always has latest MCP server state
