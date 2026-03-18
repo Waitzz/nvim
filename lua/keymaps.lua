@@ -3,7 +3,6 @@ local keymap_opts = {
     silent = true, -- do not show message
 }
 
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>t", "<cmd>Outline<CR>", keymap_opts)
 
 -- delete default mapping from v0.10.1

@@ -13,6 +13,19 @@ Snacks.setup({
             { section = "startup" },
         },
     },
+
+    explorer = {
+        enabled = true,
+    },
+
+    picker = {
+        sources = {
+            explorer = {
+                layout = { layout = { position = "right" } },
+                auto_close = true,
+            },
+        },
+    },
 })
 
 -- picker
@@ -45,3 +58,8 @@ end, { desc = "Toggle Terminal" })
 vim.api.nvim_create_user_command("Dashboard", function()
     Snacks.dashboard()
 end, {})
+
+-- explorer
+vim.keymap.set("n", "<leader>e", function()
+    Snacks.explorer()
+end, { desc = "File Explorer" })

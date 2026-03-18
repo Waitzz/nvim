@@ -22,16 +22,6 @@ require("lazy").setup({
     },
 
     {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
-        config = function()
-            require("configs/nvim-tree")
-        end,
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
-
-    {
         "akinsho/bufferline.nvim",
         version = "*",
         config = function()
