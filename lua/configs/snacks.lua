@@ -18,6 +18,10 @@ Snacks.setup({
         enabled = true,
     },
 
+    words = {
+        enabled = true,
+    },
+
     picker = {
         sources = {
             explorer = {
