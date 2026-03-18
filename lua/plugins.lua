@@ -60,11 +60,12 @@ require("lazy").setup({
     },
 
     {
-        "nvim-telescope/telescope.nvim",
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
         config = function()
-            require("configs/telescope")
+            require("configs/snacks")
         end,
-        dependencies = { "nvim-lua/plenary.nvim" },
     },
 
     {
@@ -202,7 +203,6 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
             "folke/snacks.nvim",
-            "nvim-telescope/telescope.nvim",
         },
 
         keys = require("configs/avante").keys,
