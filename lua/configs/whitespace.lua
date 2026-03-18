@@ -6,11 +6,9 @@ end
 whitespace.setup({
     ignored_filetypes = {
         "lazy",
-        "toggleterm",
         "dashboard",
         "mason",
         "lspinfo",
-        "TelescopePrompt",
         "Trouble",
         "help",
         "",
