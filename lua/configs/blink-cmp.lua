@@ -59,12 +59,17 @@ blink_cmp.setup({
 
         per_filetype = {
             ["AvanteInput"] = { "avante" },
+            ["dap-repl"] = { "dap" },
         },
 
         providers = {
             avante = {
                 module = "blink-cmp-avante",
                 name = "Avante",
+            },
+            dap = {
+                module = "blink-cmp-dap",
+                name = "DAP",
             },
         },
     },

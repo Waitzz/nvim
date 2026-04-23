@@ -44,3 +44,15 @@ mason_tool.setup({
         "prettier",
     },
 })
+
+local dap_ok, mason_dap = pcall(require, "mason-nvim-dap")
+if not dap_ok then
+    return
+end
+
+mason_dap.setup({
+    ensure_installed = {
+        "python"
+    },
+    automatic_installation = true
+})
