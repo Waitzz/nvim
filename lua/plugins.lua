@@ -103,6 +103,7 @@ require("lazy").setup({
         dependencies = {
             "williamboman/mason-lspconfig.nvim",
             "WhoIsSethDaniel/mason-tool-installer.nvim",
+            "jay-babu/mason-nvim-dap.nvim",
             "neovim/nvim-lspconfig",
         },
         config = function()
@@ -116,6 +117,7 @@ require("lazy").setup({
             "L3MON4D3/LuaSnip",
             "rafamadriz/friendly-snippets",
             "Kaiser-Yang/blink-cmp-avante",
+            "mayromr/blink-cmp-dap",
         },
         version = "*",
         config = function()
@@ -205,6 +207,19 @@ require("lazy").setup({
         "stevearc/conform.nvim",
         config = function()
             require("configs/conform")
+        end,
+    },
+
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+            "nvim-neotest/nvim-nio",
+            "theHamsta/nvim-dap-virtual-text",
+            "mfussenegger/nvim-dap-python",
+        },
+        config = function()
+            require("configs/nvim-dap")
         end,
     },
 })
