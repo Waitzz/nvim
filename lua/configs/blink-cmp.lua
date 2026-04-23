@@ -3,12 +3,10 @@ if not blink_ok then
     return
 end
 
-local luasnip_ok, luasnip = pcall(require, "luasnip")
-if not luasnip_ok then
-    return
+local luasnip_ok, luasnip = pcall(require, "luasnip.loaders.from_vscode")
+if luasnip_ok then
+    luasnip.lazy_load()
 end
-
-require("luasnip.loaders.from_vscode").lazy_load()
 
 local has_words_before = function()
     local col = vim.api.nvim_win_get_cursor(0)[2]
@@ -57,7 +55,12 @@ blink_cmp.setup({
         preset = "luasnip",
     },
     sources = {
-        default = { "avante", "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "path", "snippets", "buffer" },
+
+        per_filetype = {
+            ["AvanteInput"] = { "avante" },
+        },
+
         providers = {
             avante = {
                 module = "blink-cmp-avante",
