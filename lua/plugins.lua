@@ -62,13 +62,6 @@ require("lazy").setup({
     },
 
     {
-        "johnfrankmorgan/whitespace.nvim",
-        config = function()
-            require("configs/whitespace")
-        end,
-    },
-
-    {
         "jake-stewart/multicursor.nvim",
         config = function()
             require("configs/multicursor")
