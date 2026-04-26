@@ -52,7 +52,8 @@ end
 
 mason_dap.setup({
     ensure_installed = {
-        "python"
+        "python",
+        "bash",
     },
-    automatic_installation = true
+    automatic_installation = true,
 })
