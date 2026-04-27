@@ -62,6 +62,14 @@ require("lazy").setup({
     },
 
     {
+        "nvim-mini/mini.trailspace",
+        event = "VeryLazy",
+        config = function()
+            require("configs/trailspace")
+        end,
+    },
+
+    {
         "jake-stewart/multicursor.nvim",
         config = function()
             require("configs/multicursor")
