@@ -100,6 +100,12 @@ require("lazy").setup({
     },
 
     {
+        "kylechui/nvim-surround",
+        event = "VeryLazy",
+        opts = {},
+    },
+
+    {
         "williamboman/mason.nvim",
         dependencies = {
             "williamboman/mason-lspconfig.nvim",
