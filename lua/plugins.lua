@@ -92,6 +92,13 @@ require("lazy").setup({
     },
 
     {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        config = function()
+            require("configs/treesitter-textobjects")
+        end,
+    },
+
+    {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
         config = function()
