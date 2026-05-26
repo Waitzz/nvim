@@ -236,4 +236,11 @@ require("lazy").setup({
             require("configs/nvim-dap")
         end,
     },
+
+    {
+        "folke/sidekick.nvim",
+        config = function()
+            require("configs/sidekick")
+        end,
+    },
 })
