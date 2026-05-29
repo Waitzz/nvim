@@ -5,6 +5,7 @@ end
 
 treesitter.install({
     "c",
+    "cpp",
     "lua",
     "vim",
     "vimdoc",
@@ -26,6 +27,7 @@ treesitter.install({
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {
         "c",
+        "cpp",
         "asm",
         "sh",
         "json",
