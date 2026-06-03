@@ -84,10 +84,9 @@ require("lazy").setup({
     },
 
     {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
+        "romus204/tree-sitter-manager.nvim",
         config = function()
-            require("configs/treesitter")
+            require("configs/treesitter-manager")
         end,
     },
 
