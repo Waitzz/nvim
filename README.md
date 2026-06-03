@@ -6,7 +6,7 @@ A powerful and highly customizable Neovim configuration based on Lua, using Lazy
 
 ### Prerequisites
 
-- Neovim >= 0.11.0
+- Neovim >= 0.12.0
 - Git >= 2.31.0
 - Cargo
 - Node.js >= v20.0.0
