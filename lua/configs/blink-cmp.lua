@@ -14,7 +14,7 @@ local has_words_before = function()
         return false
     end
     local line = vim.api.nvim_get_current_line()
-    return line:sub(col, col):match("%s") == nil
+    return line:sub(col, col):match("[%w_]") ~= nil
 end
 
 blink_cmp.setup({
