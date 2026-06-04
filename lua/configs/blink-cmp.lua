@@ -3,9 +3,9 @@ if not blink_ok then
     return
 end
 
-local luasnip_ok, luasnip = pcall(require, "luasnip.loaders.from_vscode")
+local luasnip_ok, luasnip = pcall(require, "luasnip")
 if luasnip_ok then
-    luasnip.lazy_load()
+    require("luasnip.loaders.from_vscode").lazy_load()
 end
 
 local has_words_before = function()
@@ -27,7 +27,11 @@ blink_cmp.setup({
                     return cmp.select_next()
                 end
             end,
-            "snippet_forward",
+            function(cmp)
+                if luasnip and luasnip.locally_jumpable(1) then
+                    return cmp.snippet_forward()
+                end
+            end,
             function(cmp)
                 if has_words_before() then
                     return cmp.insert_next()
@@ -42,7 +46,11 @@ blink_cmp.setup({
                     return cmp.select_prev()
                 end
             end,
-            "snippet_backward",
+            function(cmp)
+                if luasnip and luasnip.locally_jumpable(-1) then
+                    return cmp.snippet_backward()
+                end
+            end,
             "fallback",
         },
 
