@@ -70,6 +70,12 @@ require("lazy").setup({
     },
 
     {
+        "nvim-mini/mini.ai",
+        version = false,
+        opts = {},
+    },
+
+    {
         "jake-stewart/multicursor.nvim",
         config = function()
             require("configs/multicursor")
@@ -87,13 +93,6 @@ require("lazy").setup({
         "romus204/tree-sitter-manager.nvim",
         config = function()
             require("configs/treesitter-manager")
-        end,
-    },
-
-    {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        config = function()
-            require("configs/treesitter-textobjects")
         end,
     },
 
