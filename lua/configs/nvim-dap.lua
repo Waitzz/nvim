@@ -76,4 +76,25 @@ dap.configurations.sh = {
     },
 }
 
+dap.adapters.gdb = {
+    type = "executable",
+    command = "gdb-multiarch",
+    args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
+}
+
+dap.configurations.c = {
+    {
+        name = "Attach to gdbserver",
+        type = "gdb",
+        request = "attach",
+        target = function()
+            return vim.fn.input("Remote Target (IP:Port): ", "")
+        end,
+        program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+    },
+}
+
 vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
