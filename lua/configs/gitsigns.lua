@@ -31,4 +31,7 @@ end
 gitsigns.setup({
     sign_priority = 10,
     on_attach = on_attach_keymap,
+    preview_config = {
+        border = "rounded",
+    },
 })
