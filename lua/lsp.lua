@@ -55,3 +55,8 @@ vim.lsp.config("asm_lsp", {
     capabilities = capabilities,
 })
 vim.lsp.enable("asm_lsp")
+
+vim.lsp.config("rust_analyzer", {
+    capabilities = capabilities,
+})
+vim.lsp.enable("rust_analyzer")

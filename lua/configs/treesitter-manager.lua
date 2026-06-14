@@ -23,5 +23,6 @@ treesitter_manager.setup({
         "t32",
         "yaml",
         "regex",
+        "rust",
     },
 })
