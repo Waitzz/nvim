@@ -27,6 +27,7 @@ mason_lspconfig.setup({
         "jsonls",
         "asm_lsp",
         "yamlls",
+        "rust_analyzer",
     },
 })
 
