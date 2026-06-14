@@ -24,5 +24,6 @@ treesitter_manager.setup({
         "yaml",
         "regex",
         "rust",
+        "toml",
     },
 })

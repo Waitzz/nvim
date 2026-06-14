@@ -28,6 +28,7 @@ mason_lspconfig.setup({
         "asm_lsp",
         "yamlls",
         "rust_analyzer",
+        "taplo",
     },
 })
 
