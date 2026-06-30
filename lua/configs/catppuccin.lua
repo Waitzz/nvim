@@ -4,8 +4,8 @@ if not is_ok then
 end
 
 catppuccin.setup({
+    auto_integrations = true,
     integrations = {
-        notify = true,
         noice = true,
     },
 })
