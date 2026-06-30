@@ -25,5 +25,6 @@ treesitter_manager.setup({
         "regex",
         "rust",
         "toml",
+        "tmux",
     },
 })
