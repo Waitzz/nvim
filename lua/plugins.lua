@@ -105,8 +105,8 @@ require("lazy").setup({
     },
 
     {
-        "kylechui/nvim-surround",
-        event = "VeryLazy",
+        "nvim-mini/mini.surround",
+        version = false,
         opts = {},
     },
 
