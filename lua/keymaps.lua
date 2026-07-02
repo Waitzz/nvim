@@ -1,10 +1,3 @@
-local keymap_opts = {
-    noremap = true, -- non-recursive
-    silent = true, -- do not show message
-}
-
-vim.keymap.set("n", "<leader>t", "<cmd>Outline<CR>", keymap_opts)
-
 -- delete default mapping from v0.10.1
 vim.keymap.del("n", "grr", {})
 vim.keymap.del("n", "gri", {})
