@@ -11,6 +11,7 @@ conform.setup({
         sh = { "shfmt" },
         python = { "ruff_format" },
         json = { "prettier" },
+        jsonc = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },
     },
