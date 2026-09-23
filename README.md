@@ -12,16 +12,12 @@ A powerful and highly customizable Neovim configuration based on Lua, using Lazy
 - Node.js >= v20.0.0
 - tree-sitter-cli
 - Python >= 3.12
-- mcp-hub
 
 ### Install Dependencies
 
 ```bash
 # Install tree-sitter-cli using Cargo
 cargo install --locked tree-sitter-cli
-
-# Install mcp-hub using npm
-npm install -g mcp-hub@latest
 ```
 
 ### Installation Steps
