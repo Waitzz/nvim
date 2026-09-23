@@ -12,16 +12,12 @@
 - Node.js >= v20.0.0
 - tree-sitter-cli
 - Python >= 3.12
-- mcp-hub
 
 ### 安装依赖
 
 ```bash
 # 使用 Cargo 安装 tree-sitter-cli
 cargo install --locked tree-sitter-cli
-
-# 使用 npm 安装 mcp-hub
-npm install -g mcp-hub@latest
 ```
 
 ### 安装步骤
