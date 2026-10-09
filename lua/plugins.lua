@@ -164,13 +164,19 @@ require("lazy").setup({
         "yetone/avante.nvim",
         build = vim.fn.has("win32") ~= 0
                 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
-            or "make",
+            or "sh build.sh",
         event = "VeryLazy",
         version = false,
         dependencies = {
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
             "folke/snacks.nvim",
+            {
+                "ColinKennedy/mega.cmdparse",
+                dependencies = {
+                    "ColinKennedy/mega.logging",
+                },
+            },
         },
 
         keys = require("configs/avante").keys,
