@@ -44,6 +44,7 @@ mason_tool.setup({
         "shfmt",
         "ruff",
         "prettier",
+        "rumdl",
     },
 })
 
