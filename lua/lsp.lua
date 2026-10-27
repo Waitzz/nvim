@@ -61,3 +61,11 @@ vim.lsp.config("taplo", {
     capabilities = capabilities,
 })
 vim.lsp.enable("taplo")
+
+vim.lsp.config("rumdl", {
+    cmd = { "rumdl", "server" },
+    filetypes = { "markdown" },
+    root_markers = { ".git", ".rumdl.toml" },
+    capabilities = capabilities,
+})
+vim.lsp.enable("rumdl")
