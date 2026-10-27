@@ -235,4 +235,12 @@ require("lazy").setup({
             require("configs/sidekick")
         end,
     },
+
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("configs/trouble")
+        end,
+    },
 })
