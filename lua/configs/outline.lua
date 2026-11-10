@@ -16,4 +16,4 @@ outline.setup({
     },
 })
 
-vim.keymap.set("n", "<leader>t", "<cmd>Outline<CR>", { silent = true, desc = "Toggle Outline" })
+vim.keymap.set("n", "<leader>cs", "<cmd>Outline<CR>", { silent = true, desc = "Toggle Outline" })

@@ -37,23 +37,45 @@ Snacks.setup({
 })
 
 -- picker
-vim.keymap.set("n", "<leader>f", function()
+-- ,f group: find
+vim.keymap.set("n", "<leader>ff", function()
     Snacks.picker.files()
 end, { desc = "Find Files" })
 
-vim.keymap.set("n", "<leader>g", function()
-    Snacks.picker.grep()
-end, { desc = "Grep" })
+vim.keymap.set("n", "<leader><space>", function()
+    Snacks.picker.files()
+end, { desc = "Find Files" })
 
-vim.keymap.set("n", "<leader>b", function()
+vim.keymap.set("n", "<leader>fr", function()
+    Snacks.picker.recent()
+end, { desc = "Recent Files" })
+
+vim.keymap.set("n", "<leader>fb", function()
     Snacks.picker.buffers()
 end, { desc = "Buffers" })
 
-vim.keymap.set({ "n", "x" }, "<leader>w", function()
+vim.keymap.set("n", "<leader>,", function()
+    Snacks.picker.buffers()
+end, { desc = "Buffers" })
+
+-- ,s group: search
+vim.keymap.set("n", "<leader>/", function()
+    Snacks.picker.grep()
+end, { desc = "Grep" })
+
+vim.keymap.set("n", "<leader>sg", function()
+    Snacks.picker.grep()
+end, { desc = "Grep" })
+
+vim.keymap.set({ "n", "x" }, "<leader>sw", function()
     Snacks.picker.grep_word()
 end, { desc = "Visual selection or word" })
 
-vim.keymap.set("n", "<leader>s", function()
+vim.keymap.set("n", "<leader>ss", function()
+    Snacks.picker.lsp_symbols()
+end, { desc = "LSP Document Symbols" })
+
+vim.keymap.set("n", "<leader>sS", function()
     Snacks.picker.lsp_workspace_symbols()
 end, { desc = "LSP Workspace Symbols" })
 
