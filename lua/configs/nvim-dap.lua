@@ -97,4 +97,14 @@ dap.configurations.c = {
     },
 }
 
+-- ,d group: debug
 vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
+vim.keymap.set("n", "<leader>dc", dap.continue)
+vim.keymap.set("n", "<leader>di", dap.step_into)
+vim.keymap.set("n", "<leader>dO", dap.step_over)
+vim.keymap.set("n", "<leader>do", dap.step_out)
+vim.keymap.set("n", "<leader>dt", dap.terminate)
+
+if ui_ok then
+    vim.keymap.set("n", "<leader>du", dapui.toggle)
+end
