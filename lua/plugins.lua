@@ -162,9 +162,7 @@ require("lazy").setup({
 
     {
         "yetone/avante.nvim",
-        build = vim.fn.has("win32") ~= 0
-                and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
-            or "sh build.sh",
+        build = ":AvanteBuild",
         event = "VeryLazy",
         version = false,
         dependencies = {
