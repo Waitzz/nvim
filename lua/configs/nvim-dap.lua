@@ -98,13 +98,13 @@ dap.configurations.c = {
 }
 
 -- ,d group: debug
-vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
-vim.keymap.set("n", "<leader>dc", dap.continue)
-vim.keymap.set("n", "<leader>di", dap.step_into)
-vim.keymap.set("n", "<leader>dO", dap.step_over)
-vim.keymap.set("n", "<leader>do", dap.step_out)
-vim.keymap.set("n", "<leader>dt", dap.terminate)
+vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { silent = true, desc = "Debug Breakpoint" })
+vim.keymap.set("n", "<leader>dc", dap.continue, { silent = true, desc = "Debug Continue" })
+vim.keymap.set("n", "<leader>di", dap.step_into, { silent = true, desc = "Debug Step Into" })
+vim.keymap.set("n", "<leader>dO", dap.step_over, { silent = true, desc = "Debug Step Over" })
+vim.keymap.set("n", "<leader>do", dap.step_out, { silent = true, desc = "Debug Step Out" })
+vim.keymap.set("n", "<leader>dt", dap.terminate, { silent = true, desc = "Debug Terminate" })
 
 if ui_ok then
-    vim.keymap.set("n", "<leader>du", dapui.toggle)
+    vim.keymap.set("n", "<leader>du", dapui.toggle, { silent = true, desc = "Debug UI (toggle)" })
 end
