@@ -21,7 +21,7 @@ vim.keymap.set("n", "<leader>gD", function()
     vim.cmd("DiffviewOpen origin/" .. branch)
 end, { silent = true, desc = "Git Diff (origin)" })
 
-vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", { silent = true, desc = "Git File History (current)" })
-vim.keymap.set("n", "<leader>gl", "<cmd>DiffviewFileHistory<cr>", { silent = true, desc = "Git Log (repo)" })
+vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", { silent = true, desc = "Git File History" })
+vim.keymap.set("n", "<leader>gl", "<cmd>DiffviewFileHistory<cr>", { silent = true, desc = "Git Log" })
 
 diffview.setup({})

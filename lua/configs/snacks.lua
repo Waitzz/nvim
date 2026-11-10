@@ -40,49 +40,49 @@ Snacks.setup({
 -- ,f group: find
 vim.keymap.set("n", "<leader>ff", function()
     Snacks.picker.files()
-end, { desc = "Find Files" })
+end, { silent = true, desc = "Find Files" })
 
 vim.keymap.set("n", "<leader><space>", function()
     Snacks.picker.files()
-end, { desc = "Find Files" })
+end, { silent = true, desc = "Find Files" })
 
 vim.keymap.set("n", "<leader>fr", function()
     Snacks.picker.recent()
-end, { desc = "Recent Files" })
+end, { silent = true, desc = "Find Recent Files" })
 
 vim.keymap.set("n", "<leader>fb", function()
     Snacks.picker.buffers()
-end, { desc = "Buffers" })
+end, { silent = true, desc = "Find Buffers" })
 
 vim.keymap.set("n", "<leader>,", function()
     Snacks.picker.buffers()
-end, { desc = "Buffers" })
+end, { silent = true, desc = "Find Buffers" })
 
 -- ,s group: search
 vim.keymap.set("n", "<leader>/", function()
     Snacks.picker.grep()
-end, { desc = "Grep" })
+end, { silent = true, desc = "Grep" })
 
 vim.keymap.set("n", "<leader>sg", function()
     Snacks.picker.grep()
-end, { desc = "Grep" })
+end, { silent = true, desc = "Search Grep" })
 
 vim.keymap.set({ "n", "x" }, "<leader>sw", function()
     Snacks.picker.grep_word()
-end, { desc = "Visual selection or word" })
+end, { silent = true, desc = "Search Word or Selection" })
 
 vim.keymap.set("n", "<leader>ss", function()
     Snacks.picker.lsp_symbols()
-end, { desc = "LSP Document Symbols" })
+end, { silent = true, desc = "Search Symbols (document)" })
 
 vim.keymap.set("n", "<leader>sS", function()
     Snacks.picker.lsp_workspace_symbols()
-end, { desc = "LSP Workspace Symbols" })
+end, { silent = true, desc = "Search Symbols (workspace)" })
 
 -- terminal
 vim.keymap.set({ "n", "t" }, "<F12>", function()
     Snacks.terminal.toggle(nil, { win = { style = "float", border = "rounded" } })
-end, { desc = "Toggle Terminal" })
+end, { silent = true, desc = "Toggle Terminal" })
 
 -- dashboard
 vim.api.nvim_create_user_command("Dashboard", function()
@@ -92,4 +92,4 @@ end, {})
 -- explorer
 vim.keymap.set("n", "<leader>e", function()
     Snacks.explorer()
-end, { desc = "File Explorer" })
+end, { silent = true, desc = "Toggle Explorer" })
