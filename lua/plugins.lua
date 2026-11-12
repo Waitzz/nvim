@@ -127,7 +127,6 @@ require("lazy").setup({
         dependencies = {
             "L3MON4D3/LuaSnip",
             "rafamadriz/friendly-snippets",
-            "Kaiser-Yang/blink-cmp-avante",
             "mayromr/blink-cmp-dap",
         },
         version = "*",
@@ -161,32 +160,21 @@ require("lazy").setup({
     },
 
     {
-        "yetone/avante.nvim",
-        build = ":AvanteBuild",
-        event = "VeryLazy",
-        version = false,
+        "olimorris/codecompanion.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "folke/snacks.nvim",
-            {
-                "ColinKennedy/mega.cmdparse",
-                dependencies = {
-                    "ColinKennedy/mega.logging",
-                },
-            },
         },
-
-        keys = require("configs/avante").keys,
-        opts = require("configs/avante").opts,
+        config = function()
+            require("configs/codecompanion")
+        end,
     },
 
     {
         "MeanderingProgrammer/render-markdown.nvim",
         opts = {
-            file_types = { "markdown", "Avante" },
+            file_types = { "markdown", "codecompanion" },
         },
-        ft = { "markdown", "Avante" },
+        ft = { "markdown", "codecompanion" },
     },
 
     {
