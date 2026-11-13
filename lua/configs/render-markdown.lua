@@ -9,5 +9,17 @@ render_markdown.setup({
         buflisted = {
             [false] = { enabled = false },
         },
+        filetype = {
+            codecompanion = {
+                enabled = true,
+                anti_conceal = {
+                    enabled = true,
+                    disabled_modes = { "n" },
+                },
+                win_options = {
+                    concealcursor = { rendered = "n" },
+                },
+            },
+        },
     },
 })
