@@ -30,6 +30,9 @@ codecompanion.setup({
         chat = {
             adapter = "opencode",
         },
+        inline = {
+            adapter = "opencode"
+        }
     },
 
     adapters = {
