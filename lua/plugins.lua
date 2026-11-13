@@ -171,9 +171,9 @@ require("lazy").setup({
 
     {
         "MeanderingProgrammer/render-markdown.nvim",
-        opts = {
-            file_types = { "markdown", "codecompanion" },
-        },
+        config = function()
+            require("configs/render-markdown")
+        end,
         ft = { "markdown", "codecompanion" },
     },
 
