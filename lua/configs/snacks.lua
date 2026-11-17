@@ -2,6 +2,8 @@ if Snacks == nil then
     return
 end
 
+local has_lazygit = vim.fn.executable("lazygit") == 1
+
 Snacks.setup({
     dashboard = {
         enabled = true,
@@ -24,6 +26,10 @@ Snacks.setup({
 
     notifier = {
         enabled = true,
+    },
+
+    lazygit = {
+        enabled = has_lazygit,
     },
 
     picker = {
@@ -83,6 +89,17 @@ end, { silent = true, desc = "Search Symbols (workspace)" })
 vim.keymap.set({ "n", "t" }, "<F12>", function()
     Snacks.terminal.toggle(nil, { win = { style = "float", border = "rounded" } })
 end, { silent = true, desc = "Toggle Terminal" })
+
+-- lazygit (aligned with LazyVim)
+if has_lazygit then
+    vim.keymap.set("n", "<leader>gg", function()
+        Snacks.lazygit()
+    end, { silent = true, desc = "Lazygit (Root Dir)" })
+
+    vim.keymap.set("n", "<leader>gG", function()
+        Snacks.lazygit({ cwd = vim.uv.cwd() })
+    end, { silent = true, desc = "Lazygit (cwd)" })
+end
 
 -- dashboard
 vim.api.nvim_create_user_command("Dashboard", function()
