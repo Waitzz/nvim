@@ -26,6 +26,25 @@ vim.keymap.set(
 vim.cmd([[cab cc CodeCompanion]])
 
 codecompanion.setup({
+    display = {
+        chat = {
+            window = {
+                position = "right",
+                width = 0.3,
+                opts = {
+                    number = false,
+                },
+            },
+
+            input = {
+                layout = "split",
+                height = 8,
+            },
+
+            fold_context = true,
+        },
+    },
+
     interactions = {
         chat = {
             adapter = "opencode",
