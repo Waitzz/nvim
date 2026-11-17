@@ -70,4 +70,12 @@ codecompanion.setup({
             },
         },
     },
+
+    extensions = {
+        spinner = {
+            opts = {
+                style = "lualine",
+            },
+        },
+    },
 })

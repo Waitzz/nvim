@@ -163,6 +163,7 @@ require("lazy").setup({
         "olimorris/codecompanion.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "lalitmee/codecompanion-spinners.nvim",
         },
         config = function()
             require("configs/codecompanion")
