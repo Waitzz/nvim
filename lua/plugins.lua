@@ -123,6 +123,16 @@ require("lazy").setup({
     },
 
     {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+            library = {
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+
+    {
         "saghen/blink.cmp",
         dependencies = {
             "L3MON4D3/LuaSnip",
