@@ -42,6 +42,7 @@ codecompanion.setup({
             },
 
             fold_context = true,
+            start_in_insert_mode = true,
         },
     },
 
