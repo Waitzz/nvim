@@ -93,11 +93,11 @@ end, { silent = true, desc = "Toggle Terminal" })
 -- lazygit (aligned with LazyVim)
 if has_lazygit then
     vim.keymap.set("n", "<leader>gg", function()
-        Snacks.lazygit()
+        Snacks.lazygit({ cwd = Snacks.git.get_root() })
     end, { silent = true, desc = "Lazygit (Root Dir)" })
 
     vim.keymap.set("n", "<leader>gG", function()
-        Snacks.lazygit({ cwd = vim.uv.cwd() })
+        Snacks.lazygit()
     end, { silent = true, desc = "Lazygit (cwd)" })
 end
 
