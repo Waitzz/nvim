@@ -110,3 +110,8 @@ end, {})
 vim.keymap.set("n", "<leader>e", function()
     Snacks.explorer()
 end, { silent = true, desc = "Toggle Explorer" })
+
+-- buffers
+vim.keymap.set("n", "<leader>bd", function()
+    Snacks.bufdelete()
+end, { silent = true, desc = "Delete Buffer" })
