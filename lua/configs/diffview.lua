@@ -24,4 +24,16 @@ end, { silent = true, desc = "Git Diff (origin)" })
 vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", { silent = true, desc = "Git File History" })
 vim.keymap.set("n", "<leader>gl", "<cmd>DiffviewFileHistory<cr>", { silent = true, desc = "Git Log" })
 
-diffview.setup({})
+diffview.setup({
+    keymaps = {
+        view = {
+            { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" } },
+        },
+        file_panel = {
+            { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" } },
+        },
+        file_history_panel = {
+            { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close Diffview" } },
+        },
+    },
+})
